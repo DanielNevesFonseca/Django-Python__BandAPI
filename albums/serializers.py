@@ -1,13 +1,20 @@
 from rest_framework import serializers
-from .models import Album
+from users.models import User
+
 from users.serializers import UserSerializer
+from .models import Album
 
 
-class AlbumSerializer(serializers.Serializer):
-    id = serializers.IntegerField(read_only=True)
-    name = serializers.CharField(max_length=255)
-    year = serializers.IntegerField()
+class AlbumSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Album
+        fields = ['id', 'name', 'year', 'user']
+        depth = 1
+        read_only_fields = ['user']
+    
     user = UserSerializer(read_only=True)
+
+    
 
     def create(self, validated_data):
         return Album.objects.create(**validated_data)

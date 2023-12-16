@@ -11,5 +11,6 @@ class Album(models.Model):
     user = models.ForeignKey(
         "users.User",
         on_delete=models.CASCADE,
-        related_name="albums",
+        related_name="albums"
+
     )
