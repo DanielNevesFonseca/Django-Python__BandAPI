@@ -1,5 +1,26 @@
-venv
-__pycache__
-.vscode
-db.sqlite3
+# Arquivos de ambiente
 .env
+
+# Virtual environment
+venv/
+venv*/
+
+# Arquivos de compilação e logs
+*.pyc
+*.pyo
+__pycache__/
+db.sqlite3
+*.sqlite3
+*.log
+
+# Arquivos de configuração do sistema
+.idea/
+.vscode/
+
+# Dependências
+__pycache__/
+*.pyc
+
+# Arquivos de configuração específicos do sistema operacional
+.DS_Store
+Thumbs.db
